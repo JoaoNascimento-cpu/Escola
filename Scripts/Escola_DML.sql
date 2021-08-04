@@ -1,17 +1,20 @@
-USE Escola
+	USE Escola 
 
-GO
+	GO
+	
+	-- Inseri Informações TiposEquipamentos
 
--- Seleciona TiposEquipamentos
-SELECT TipoEquip FROM TipoEquipamentos
+	INSERT INTO TipoEquipamentos(TipoEquip) VALUES ('Mobiliário'), ('Informática'), ('EletroEletrônico');
 
--- Seleciona Salas
-SELECT Andar, Nome, MetragemSala FROM Salas
+	-- Inseri Informações Salas
 
--- Seleciona Usuarios
-SELECT Email, Senha FROM Usuarios
+	INSERT INTO Salas(Andar, Nome, MetragemSala) VALUES (5 , 'Saguão', 25), (2 , 'Sala Informtica', 12.89);
 
--- Seleciona Equipamentos, Utilizando INNER JOIN puxando tabela do Salas, TipoEquipamentos
-SELECT Marca, NumeroSerie, Descricao, NumeroPatrimonio, StatusEquipa, TipoEquipamentos.TipoEquip, Salas.Andar, Salas.MetragemSala, Salas.Nome FROM Equipamentos
-INNER JOIN TipoEquipamentos ON Equipamentos.IdTipoEquip = TipoEquipamentos.IdTipoEquip
-INNER JOIN Salas on Equipamentos.IdSala = Salas.IdSala 
+	-- Inseri Informações Usuarios
+
+	INSERT INTO Usuarios(Email, Senha) VALUES ('Joao@email.com', 'joao123');
+
+	-- Inseri Informações Equipamentos
+
+	INSERT INTO Equipamentos (IdTipoEquip, IdSala, Marca, NumeroSerie, Descricao, NumeroPatrimonio, StatusEquipa ) VALUES (2, 2, 'Dell', 23, 'Computador de informatica', 1, 1);
+	
