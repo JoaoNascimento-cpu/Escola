@@ -27,7 +27,7 @@
 <!-- Sobre o Projeto -->
 ## Sobre o Projeto 👍
 <p id="about">
-Esse projeto busca a criação um sistema de gerenciamento de patrimônio para uma escola.
+Esse projeto busca a criação um sistema de gerenciamento de patrimônio para uma escola, onde poderá ser realizado o cadastro e a listagem de salas e seus devidos equipamentos por um administrador, os usuários que se cadastrarem terão acesso a uma lista mostrando as salas e equipamentos.
 
 
 ### Principais tecnologias e metodos usados 📶
