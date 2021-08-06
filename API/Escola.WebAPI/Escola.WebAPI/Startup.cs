@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,14 @@ namespace Escola.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddControllers();
+                .AddControllers()
+                .AddNewtonsoftJson(options =>
+                {
+                    // Ignora os loopings nas consultas
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                    // Ignora valores nulos ao fazer junções nas consultas
+                    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
