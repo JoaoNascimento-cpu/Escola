@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CadEquipamento.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+    <title>Cadastro equipamento</title>
+</head>
+<body id="BodyLogin">
+    <header id="HeaderCad">
+        <div id="DivHeaderCad">
+            <div class="divImgHeader">
+                <a href="#"><img src="Img/logoProjeto2.png" alt="Logo do site" class="Img-CadEquip"></a>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="#"> Cadastro Sala </a>
+                    <hr class="BarStatus">
+                </li>
+                <li>
+                   <a href="#"> Cadastro Equipamentos </a>
+                    <hr  class="BarStatus2">
+                </li> 
+
+                <li>
+                    <a href="#"> <img src="Img/IconPerfil.png" class="IconHeader"/> </a>
+                </li>
+                
+                <li>
+                    <a href="#"> <img src="Img/Sair.png" class="IconHeader"/> </a>
+                </li>
+            </ul>
+        </div>
+ 
+    </header>
+
+    <main id="MainLogin">
+        <div class="box-Inside-CadEquip">
+            <div class="Group-Itens-Form">
+                <div >
+                    <h1 class="Size-H1-Cad">Cadastro Equipamentos</h1>
+                    <hr class="BarStatus3">
+
+                    <p class="Size-p-Form-cad">Todos os campos são de preenchimento obrigatório*</p>
+                    <div class="Outside-form">
+                        <form>                    
+                                <input type="text" placeholder="Marca:" class="InptCad">
+
+                            <div class="Div-Radios">
+                                <div class="Box-Radios-Items">
+                                    <p>Tipo Equipamentos :</p>
+                                </div>
+
+                                <div class="Box-Radios-Items2">
+                                    <input type="radio" id="Mobiliario" value="Mobiliario" name="equip" class="">
+                                    <label for="Mobiliario" class="Label-Form">Mobiliário</label>
+                                    <input type="radio" id="Informatica" value="Informatica" name="equip" >
+                                    <label for="Informatica" class="Label-Form">Informática</label>
+                                    <input type="radio" id="Eletroeletronica" value="Eletroeletronica" name="equip">
+                                    <label for="Eletroeletronica" class="Label-Form">Eletroeletrônica</label>
+                                </div>
+                            </div>
+
+                            <div class="Div-txt-inpt">
+                                <input type="text" placeholder="Nº Série" class="InptCad2">
+
+                                <div class="Input-Box-Atv">
+                                    <input type="radio" id="Inativo" value="Inativo" name="status" >
+                                    <label for="Mobiliario" class="Txt-Radios">Ativo</label>
+                                </div>
+
+                                <div class="Input-Box-Atv">
+                                    <input type="radio" id="Ativo" value="Ativo" name="status"  >
+                                    <label for="Mobiliario" class="Txt-Radios">Inativo</label>
+                                </div>
+
+                            </div>
+
+                            <div class="box-finish-cad">
+                                <input type="text" placeholder="Nº Patrimônio" class="InptCad2">
+                                <input type="text" placeholder="Descrição" class="InptCad3">
+                            </div>
+                            <div class="Div-btn-cad">
+                                <button class="BtnCadastrar">Cadastrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="Img-Div-Logo-cad">
+                <img src="img/logoProjeto3.png" alt="Logotipo do tipo do site">
+            </div>
+
+        </div>
+            
+    </main>
+       
+</body>
+</html>
