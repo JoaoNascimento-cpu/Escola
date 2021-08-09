@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Escola.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:Escola.WebAPI.Controllers.TipoEquipamentoController.Listar">
+            <summary>
+            método utilizado 
+            </summary>
+            <returns>status code 200 - OK</returns>
+        </member>
+        <member name="M:Escola.WebAPI.Controllers.TipoEquipamentoController.Cadastrar(Escola.WebAPI.Domains.TipoEquipamento)">
+            <summary>
+            método utilizado para o cadastro de novos tipos de equipamento
+            </summary>
+            <param name="novoTipoEquipamento">objeto que carrega novas informções que serão passadas pelo corpo da requisição</param>
+            <returns>status code 201 - created</returns>
+        </member>
+        <member name="M:Escola.WebAPI.Controllers.TipoEquipamentoController.Deletar(System.Int32)">
+            <summary>
+            método para deletar tipo de equioamento
+            </summary>
+            <param name="id">objeto que irá passar as informações pelo </param>
+            <returns>status code 204- no content</returns>
+        </member>
+        <member name="M:Escola.WebAPI.Controllers.TipoEquipamentoController.Atualizar(System.Int32,Escola.WebAPI.Domains.TipoEquipamento)">
+            <summary>
+            método utilizado para atualizar informação do 
+            </summary>
+            <param name="id">id do tipo de equipamento que será atualizado passando pelo link da requisição</param>
+            <param name="novoTipoEquipamento">novas informações que serão inseridas</param>
+            <returns>status code 204 - no content</returns>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.IEquipamentoRepository.ListarTudo">
+            <summary>
+            método utilizado para a listagem de equipamentos
+            </summary>
+            <returns>retorna uma lista de equipamentos</returns>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.IEquipamentoRepository.Cadastro(Escola.WebAPI.Domains.Equipamento)">
+            <summary>
+            método para cadastro de equipamento
+            </summary>
+            <param name="novoEquipamento">objeto que irá receber as novas informações que serão passadas pelo corpo da requisição</param>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.IEquipamentoRepository.Deletar(System.Int32)">
+            <summary>
+            método para deletar os equipamentos
+            </summary>
+            <param name="id">id do equipamento que será deletado</param>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.IEquipamentoRepository.Atualizar(System.Int32,Escola.WebAPI.Domains.Equipamento)">
+            <summary>
+            método para atualizar um equipamento
+            </summary>
+            <param name="id">id do equipamento que será atualizado</param>
+            <param name="novoEquipamento">objeto que irá armazenar as novas informações passando pelo corpo da requisição</param>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.ISalaRepository.Listar">
+            <summary>
+            método para listagem de todas as salas
+            </summary>
+            <returns>lista de salas</returns>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.ISalaRepository.Cadastro(Escola.WebAPI.Domains.Sala)">
+            <summary>
+            método para cadastrar salas
+            </summary>
+            <param name="novaSala">objeto que irá receber as novas informações de </param>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.ISalaRepository.Deletar(System.Int32)">
+            <summary>
+            método de deletar as salas
+            </summary>
+            <param name="id">id da sala que será deletada</param>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.ISalaRepository.Atualizar(System.Int32,Escola.WebAPI.Domains.Sala)">
+            <summary>
+            método utilizado para atualizar a sala
+            </summary>
+            <param name="id">id da sala que será atualizada</param>
+            <param name="novaSala">objeto que urá guardar as novas informações da sala</param>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.ITipoEquipamentoRepository.Listar">
+            <summary>
+            Método utilizado para listar os tipos de equipamentos
+            </summary>
+            <returns>Lista de tipos de equipamentos</returns>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.ITipoEquipamentoRepository.Cadastro(Escola.WebAPI.Domains.TipoEquipamento)">
+            <summary>
+            método utilizado para o cadastro de 
+            </summary>
+            <param name="novoTipoEquipamento">objeto que irá receber as novas insformações</param>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.ITipoEquipamentoRepository.Deletar(System.Int32)">
+            <summary>
+            método utilizado para deletar determinado tipo de equipamento, passando o id pelo link da requisição 
+            </summary>
+            <param name="id">id do tipo de equipamento que será excluido</param>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.IUsuarioRepository.Listar">
+            <summary>
+            método utilizado para a listagem de usuários
+            </summary>
+            <returns>lista de usuários</returns>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.IUsuarioRepository.Cadastro(Escola.WebAPI.Domains.Usuario)">
+            <summary>
+            método utilizado para cadastrar um novo usuário
+            </summary>
+            <param name="NovoUsuario">objeto que irá armazenar as informações do novo usuário cadastrado</param>
+        </member>
+        <member name="M:Escola.WebAPI.Interfaces.IUsuarioRepository.AtualizarUsuario(System.Int32,Escola.WebAPI.Domains.Usuario)">
+            <summary>
+            método utilizado para atualizar determinado usuário
+            </summary>
+            <param name="id">id do usuário buscado</param>
+            <param name="usuario">objeto que irá armazenar as novas informações do usuário</param>
+        </member>
+    </members>
+</doc>
