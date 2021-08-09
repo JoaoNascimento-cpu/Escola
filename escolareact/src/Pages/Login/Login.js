@@ -4,9 +4,25 @@ import eyeOpen from '../../Assets/Img/eye.png';
 import EyeClosed from '../../Assets/Img/hidden.png';
 import Logotype from '../../Assets/Img/logoProjeto.png';
 
-
-
 function Login() {
+    const [email, setEmail] = useState('');
+    const [pwd, setPwd] = useState('');
+    const [error, setError] = useState('');
+    const [Visible, setVisible] = useState(true);
+
+
+    function EyeFunctionPassword(){
+        if(Visible == true){
+            setVisible(false)
+        }else if(Visible == false){
+            setVisible(true)
+        }
+
+
+    }
+
+
+
   let history = useHistory();
   
 
@@ -45,7 +61,9 @@ function Login() {
                                 type="password"
                                 placeholder="Senha :"
                             />
-                            <img src={eyeOpen}   className="OlhoMagico" alt="Olho Do Site"/>
+                            {
+                                Visible == true ? <img src={eyeOpen}   className="OlhoMagico" alt="Olho Do Site" onClick={EyeFunctionPassword}/> : <img src={EyeClosed} className="OlhoMagico" alt="Olho Do Site"/>
+                            }
 
 
                             <div className="SendSenha">
