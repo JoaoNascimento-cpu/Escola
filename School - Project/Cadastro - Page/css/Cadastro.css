@@ -40,6 +40,8 @@
 }
 .Cadastro-Links a{
     color: black;
+    text-decoration: none;
+
 }
 .SideRight-Cadastro-Links{
     margin-left: 22px;
@@ -96,7 +98,7 @@
 }
 .boxImageCadastro{
     display: flex;
-    align-items: center;
+    align-items: center;    
 }
 .SendRead{
     width: 100%;
