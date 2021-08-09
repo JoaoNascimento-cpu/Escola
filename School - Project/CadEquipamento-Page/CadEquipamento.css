@@ -3,12 +3,12 @@
         margin: 0;
         font-family: 'Merriweather', serif;
     }
-    #BodyLogin{
+    #BodyCad{
         width: 100%;
         height: 100vh;
 
     }
-    #MainLogin{
+    #MainCad{
         width: 100%;
         height: 87vh;
         align-items: center;
