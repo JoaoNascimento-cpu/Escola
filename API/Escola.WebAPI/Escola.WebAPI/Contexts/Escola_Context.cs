@@ -27,7 +27,7 @@ namespace Escola.WebAPI.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Data Source=LAPTOP-II7UP0KL; initial catalog=Escola; user Id=sa; pwd=Senai@132;");
             }
         }
@@ -97,10 +97,13 @@ namespace Escola.WebAPI.Contexts
 
             modelBuilder.Entity<Usuario>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.IdUsuario)
+                    .HasName("PK__Usuarios__645723A673509C2F");
 
-                entity.HasIndex(e => e.Email, "UQ__Usuarios__A9D105349BA3FF87")
+                entity.HasIndex(e => e.Email, "UQ__Usuarios__A9D105347680F7D2")
                     .IsUnique();
+
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
 
                 entity.Property(e => e.Email)
                     .IsRequired()

@@ -27,6 +27,7 @@
 	-- Cria Usuarios
 
 	CREATE TABLE Usuarios(
+		idUsuario INT PRIMARY KEY IDENTITY,
 		Email VARCHAR(255) NOT NULL UNIQUE,
 		Senha VARCHAR (100) NOT NULL
 	);

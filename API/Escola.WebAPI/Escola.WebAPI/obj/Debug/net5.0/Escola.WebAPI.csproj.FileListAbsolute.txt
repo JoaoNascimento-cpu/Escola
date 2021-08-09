@@ -71,3 +71,5 @@ C:\Users\jhony\Documents\Senai\Projeto_3º_Termo\Escola\API\Escola.WebAPI\Escola
 C:\Users\jhony\Documents\Senai\Projeto_3º_Termo\Escola\API\Escola.WebAPI\Escola.WebAPI\obj\Debug\net5.0\ref\Escola.WebAPI.dll
 C:\Users\jhony\Documents\Senai\Projeto_3º_Termo\Escola\API\Escola.WebAPI\Escola.WebAPI\obj\Debug\net5.0\Escola.WebAPI.pdb
 C:\Users\jhony\Documents\Senai\Projeto_3º_Termo\Escola\API\Escola.WebAPI\Escola.WebAPI\obj\Debug\net5.0\Escola.WebAPI.genruntimeconfig.cache
+C:\Users\jhony\Documents\Senai\Projeto_3º_Termo\Escola\API\Escola.WebAPI\Escola.WebAPI\bin\Debug\net5.0\Escola.WebAPI.xml
+C:\Users\jhony\Documents\Senai\Projeto_3º_Termo\Escola\API\Escola.WebAPI\Escola.WebAPI\obj\Debug\net5.0\Escola.WebAPI.xml
