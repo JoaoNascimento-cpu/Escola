@@ -1,8 +1,10 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory,Link } from "react-router-dom";
 import eyeOpen from '../../Assets/Img/eye.png';
 import EyeClosed from '../../Assets/Img/hidden.png';
 import Logotype from '../../Assets/Img/logoProjeto.png';
+import cadastro from '../Cadastro/Cad'
 
 
 function Login() {
@@ -13,18 +15,34 @@ function Login() {
 
 
     function EyeFunctionPassword(){
-        if(Visible == true){
-            setVisible(false)
-        }else if(Visible == false){
-            setVisible(true)
-        }
-
-
+        setVisible(!Visible)
+        console.log('mudou')
     }
 
+    function ExecuteLogin(Event){
+        Event.preventDefault();
+        setError('')
+
+        axios.post('http://localhost:5000/api/Login', {
+            Email : email,
+            Senha : pwd
+          })
+          .then(rps =>{
+
+                console.log(rps.data.token)
+                localStorage.setItem('@jwt', rps.data.token);
+                               
+                history.push('/Listagem')                       
+            })
+            .catch(error =>{
+                console.log(error)
+                setError('Email Ou Senha Incorreto')
+            })       
+            
+    }
+    
   let history = useHistory();
   
-
   return (
     <body id="BodyLogin">
         <main id="MainLogin">
@@ -39,41 +57,44 @@ function Login() {
 
                     <div className="Login-Links"> 
                         <div>
-                            <p>Login</p>
-                            <hr className="BarStatus2"/>
+                        <Link to="/Login" style={{textDecoration:'none', color: '#000'}}><p>Login</p></Link>
+                            <hr className="BarStatus"/>
                         </div>  
                         <div className="SideRight-Login-Links">
-                            <p>Cadastro</p>
-                            <hr className="BarStatus"/>
+                            <Link to="/Cadastro" style={{textDecoration:'none', color: '#000'}}><p>Cadastro</p></Link>
+                            <hr className="BarStatus2"/>
                         </div> 
                     </div>   
                     <div style={{marginBottom: 25}}>   
-                        <form  className="Box-Inpt-Login">
+                        <form  className="Box-Inpt-Login" onSubmit={ExecuteLogin}>
 
                             <input
                                 className="Inpt-Login" 
                                 type="email"
                                 placeholder="Email :"
+                                value={email}
+                                onChange={ event => setEmail(event.target.value)}
                             />
                             <input
                                 className="Inpt-Login" 
-                                type="password"
+                                type={Visible === false ? "Text" : "Password"}
                                 placeholder="Senha :"
+                                onChange={ event => setPwd(event.target.value)}
+                                value={pwd}
                             />
                             {
-                                Visible == true ? <img src={eyeOpen}   className="OlhoMagico" alt="Olho Do Site" onClick={EyeFunctionPassword}/> : <img src={EyeClosed} className="OlhoMagico" alt="Olho Do Site"/>
+                                Visible === false ? <img src={eyeOpen}   className="OlhoMagico" alt="Olho Do Site" onClick={() => EyeFunctionPassword()}/> : <img src={EyeClosed} className="OlhoMagico" alt="Olho Do Site" onClick={() => EyeFunctionPassword()}/>
                             }
 
+                            <p style={{color: 'red'}}>{error}</p>
 
-                            <div className="SendSenha">
-                                <p className="Snd-Txt-Senha">Esqueci minha Senha*</p>
-                            </div>
+                      
 
                             <div className="Access-Btn">
-                            <button className="btn-Login">Acessar</button>
+                            <button className="btn-Login" type="submit">Acessar</button>
                             </div>
 
-                        </form>
+                        </form >
                     </div>    
                 </div>  
                 <div>

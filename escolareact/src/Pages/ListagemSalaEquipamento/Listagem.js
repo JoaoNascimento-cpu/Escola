@@ -1,27 +1,36 @@
 import React, { useEffect, useState } from 'react';
 
-import '../../Assets/Css/Listagem.css' 
 
 import { useHistory } from "react-router-dom";
-
+import Header from '../../Components/Header'
+import axios from 'axios';
 
 
 function Listagem() {
-  let history = useHistory();
+
+    const [Lista, SetListar] = useState();
+
+    let history = useHistory();
 
   return (
     <div>
-        <header className="header">
-            <h1>header aqui</h1>
-        </header>
+        <Header />
         <main className="body">
-            <section className="container-listagem">
-                <div className="listagem-sala">
-                    <h2>Listagem Sala</h2>
-                </div>
-                <div className="listagem-equipamento">
-                    <h2>Listagem Equipamento</h2>
-                </div>
+            <section className="container-listagem">                     
+                       
+                                <div className="listagem-sala">
+                                    <h2>Listagem Sala</h2>
+                                    <p>andar</p>
+                                    <p>nome</p>
+                                    <p>metragemSala</p>
+                                </div>  
+
+                                <div className="listagem-sala">
+                                    <h2>Listagem Equipamento</h2>
+                                    <p>Numero serie</p>
+                                    <p>Descricao</p>
+                                    <p>Status equipamentos</p>
+                                </div>                           
             </section>
         </main>
     </div>

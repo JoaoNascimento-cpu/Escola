@@ -12,6 +12,11 @@ import '../Assets/Css/Escola.css'
 function Topo() {
   let history = useHistory();
 
+  function removeToken(){
+      localStorage.removeItem('@jwt')
+      console.log('removeu')
+  }
+
   return (
 
     <header id="HeaderCad">
@@ -19,24 +24,24 @@ function Topo() {
         <div id="DivHeaderCad">
         <div class="divImgHeader">
 
-            <a href="#"><img src={LogoType} alt="Logo do site" className="Img-CadEquip"/></a>
+            <Link to="/Listagem"><img src={LogoType} alt="Logo do site" className="Img-CadEquip"/></Link>
         </div>
 
             <ul>
                 <li>
-                    <a href="#"> Cadastro Sala </a>
-                    <hr className="BarStatus"/>
+                    <Link to="/CadastroSala"> Cadastro Sala </Link>
+                    <hr className="BarStatus2"/>
                 </li>
                 <li>
-                   <a href="#"> Cadastro Equipamentos </a>
+                   <Link to="/CadastroEquipamentos"> Cadastro Equipamentos </Link>
                     <hr  className="BarStatus2"/>
                 </li> 
                 <li>
-                    <a href="#"> <img src={IconPerson} className="IconHeader"/> </a>
+                    <Link to="#"> <img src={IconPerson} className="IconHeader"/> </Link>
                 </li>
                 
                 <li>
-                    <a href="#"> <img src={DoorLeave} className="IconHeader"/> </a>
+                    <Link to="/Login"> <img src={DoorLeave} className="IconHeader" onClick={() => removeToken()}/> </Link>
                 </li>
             </ul>     
         </div>

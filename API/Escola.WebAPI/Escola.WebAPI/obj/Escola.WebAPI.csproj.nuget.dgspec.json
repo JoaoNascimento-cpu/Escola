@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jhony\\Documents\\Senai\\Projeto_3º_Termo\\Escola\\API\\Escola.WebAPI\\Escola.WebAPI\\Escola.WebAPI.csproj": {}
+    "C:\\Users\\DarkC\\Desktop\\Escola\\API\\Escola.WebAPI\\Escola.WebAPI\\Escola.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jhony\\Documents\\Senai\\Projeto_3º_Termo\\Escola\\API\\Escola.WebAPI\\Escola.WebAPI\\Escola.WebAPI.csproj": {
+    "C:\\Users\\DarkC\\Desktop\\Escola\\API\\Escola.WebAPI\\Escola.WebAPI\\Escola.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jhony\\Documents\\Senai\\Projeto_3º_Termo\\Escola\\API\\Escola.WebAPI\\Escola.WebAPI\\Escola.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\DarkC\\Desktop\\Escola\\API\\Escola.WebAPI\\Escola.WebAPI\\Escola.WebAPI.csproj",
         "projectName": "Escola.WebAPI",
-        "projectPath": "C:\\Users\\jhony\\Documents\\Senai\\Projeto_3º_Termo\\Escola\\API\\Escola.WebAPI\\Escola.WebAPI\\Escola.WebAPI.csproj",
-        "packagesPath": "C:\\Users\\jhony\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jhony\\Documents\\Senai\\Projeto_3º_Termo\\Escola\\API\\Escola.WebAPI\\Escola.WebAPI\\obj\\",
+        "projectPath": "C:\\Users\\DarkC\\Desktop\\Escola\\API\\Escola.WebAPI\\Escola.WebAPI\\Escola.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\DarkC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DarkC\\Desktop\\Escola\\API\\Escola.WebAPI\\Escola.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jhony\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\DarkC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

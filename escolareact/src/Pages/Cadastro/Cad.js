@@ -2,10 +2,49 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import "../../Assets/Css/Escola.css"
 import Logotype from '../../Assets/Img/logoProjeto.png'
+import { Link } from "react-router-dom";
+import axios from 'axios';
+
 
 
 function Cad() {
   let history = useHistory();
+
+  const [email, SetEmail] = useState('')
+  const [pwd, Setpwd] = useState('')
+  const [ReplyPwd, SetReplyPwd] = useState('')
+  const [errorRply, SetErrorReplyPwd] = useState('')
+
+  function ExecuteCad(event){
+     event.preventDefault(); 
+    
+      if(pwd != ReplyPwd){
+          console.log('é diferente')
+          SetErrorReplyPwd('Senhas são diferentes')
+
+      }else{
+          console.log('é igual')
+          SetErrorReplyPwd('')
+
+          axios.post(
+            axios.post('http://localhost:5000/api/Usuario',{
+                Email : email,
+                Senha : pwd
+            }
+          )
+              .then(rps =>{
+    
+                    console.log(rps.status)
+                                   
+                    history.push('/Login')                       
+                })
+                .catch(error =>{
+                    console.log(error)
+                })      
+                )
+      }
+  }
+  
 
   return (
         <body id="BodyCadastro">
@@ -21,37 +60,41 @@ function Cad() {
 
                     <div className="Cadastro-Links"> 
                         <div>
-                            <a href="Cadastro.html">Cadastro</a>
+                        <Link to="/Cadastro" style={{textDecoration:'none', color: '#000'}}><p>Cadastro</p></Link>
                             <hr className="BarStatus"/>
                         </div>  
                         <div className="SideRight-Cadastro-Links">
-                            <a href="#">Login</a>
+                        <Link to="/Login" style={{textDecoration:'none', color: '#000'}}><p>Login</p></Link>
                             <hr className="BarStatus2"/>
                         </div> 
                     </div>   
 
                     <div style={{marginBottom: 25}}>   
-                        <form  className="Box-Inpt-Cadastro">
-                            <input
-                                className="Inpt-Cadastro" 
-                                type="name"
-                                placeholder="Nome :"
-                            />
+                        <form  className="Box-Inpt-Cadastro" onSubmit={ExecuteCad}>
                             <input
                                 className="Inpt-Cadastro" 
                                 type="email"
                                 placeholder="Email :"
+                                value={email}
+                                onChange={event => SetEmail(event.target.value)}
                             />
                             <input
                                 className="Inpt-Cadastro" 
                                 type="password"
                                 placeholder="Senha :"
+                                value={pwd}
+                                onChange={event => Setpwd(event.target.value)}
+
                             />
                             <input
                                 className="Inpt-Cadastro" 
                                 type="password"
                                 placeholder="Confirme sua senha :"
+                                value={ReplyPwd}
+                                onChange={event => SetReplyPwd(event.target.value)}                      
                             />
+
+                            <p style={{color:'red'}}>{errorRply}</p> 
 
                             <div className="SendRead">
                             <div className="custom-checkbox">
@@ -61,7 +104,7 @@ function Cad() {
                             </div>
 
                             <div className="Access-Btn">
-                            <button className="btn-Cadastro">Acessar</button>
+                            <button className="btn-Cadastro" type='submit'>Acessar</button>
                             </div>
                         </form>
                     </div>    
