@@ -4,11 +4,7 @@ import eyeOpen from '../../Assets/Img/eye.png';
 import EyeClosed from '../../Assets/Img/hidden.png';
 import Logotype from '../../Assets/Img/logoProjeto.png';
 
-<<<<<<< HEAD
-import '../../Assets/Css/Login.css'
 
-import Header from '../../Components/Header'
-=======
 function Login() {
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
@@ -25,29 +21,11 @@ function Login() {
 
 
     }
->>>>>>> 9a4612fc3560a8a545c2c5a555602b22eb7ed258
-
-
 
   let history = useHistory();
   
 
   return (
-<<<<<<< HEAD
-    <div>
-        <Header />
-        <body id="BodyLogin">
-          <div id="mainLogin">
-            <div id="box-login-inside">
-              <div className="Box-Img-Login">
-                <img src="Img/logoProjeto.png" Class="Logo-Login-Mobile-Top"alt="Logo do site"></img>
-              </div>
-              <div className="Login-Links"></div>
-            </div>
-          </div>
-        </body>
-    </div>
-=======
     <body id="BodyLogin">
         <main id="MainLogin">
 
@@ -107,7 +85,6 @@ function Login() {
             </div>
         </main>
     </body>
->>>>>>> 9a4612fc3560a8a545c2c5a555602b22eb7ed258
   );
 }
 
