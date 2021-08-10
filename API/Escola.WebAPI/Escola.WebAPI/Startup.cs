@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using System;
@@ -51,6 +52,42 @@ namespace Escola.WebAPI
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
+
+            services
+                //Define a forma de atuenticação 'JwtBEarer'
+                .AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = "JwtBearer";
+                    options.DefaultChallengeScheme = "JwtBearer";
+                })
+
+                //Define os parametros e validação do token
+                .AddJwtBearer("JwtBearer", options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        //valida quem está emitindo
+                        ValidateIssuer = true,
+
+                        //valida quem está recebendo
+                        ValidateAudience = true,
+
+                        //valida o tempo de expiração
+                        ValidateLifetime = true,
+
+                        //forma criptografia e a chave de autenticação
+                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Escola-Usuario-Autenticacao")),
+
+                        //tempo de expiração do token
+                        ClockSkew = TimeSpan.FromMinutes(30),
+
+                        //nome do issuer, de onde está vindo
+                        ValidIssuer = "Escola.WebAPI",
+
+                        //nome do audience, para onde está indo
+                        ValidAudience = "Escola.WebAPI"
+                    };
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,14 +100,18 @@ namespace Escola.WebAPI
 
             app.UseCors("CorsPolicy");
 
+            app.UseRouting();
+
             app.UseSwagger();
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Escola");
             });
 
-            app.UseRouting();
+            app.UseAuthentication();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

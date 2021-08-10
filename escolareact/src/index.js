@@ -7,6 +7,7 @@ import Login from './Pages/Login/Login'
 import CadastroSala from './Pages/CadastroSala/CadSala'
 import CadastroEquipamento from './Pages/CadastroEquip/CadEquip'
 import Cadastro from './Pages/Cadastro/Cad'
+import Listagem from './Pages/ListagemSalaEquipamento/Listagem';
 
 const routing = (
   <Router>
@@ -15,6 +16,7 @@ const routing = (
           <Route path="/CadastroSala" component={CadastroSala}/>
           <Route path="/CadastroEquipamentos" component={CadastroEquipamento} />
           <Route path="/Cadastro" component={Cadastro} />
+          <Route path="/Listagem" component={Listagem}/>"
       </Switch>
   </Router>
 )
